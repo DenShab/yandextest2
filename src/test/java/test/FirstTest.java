@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import pageobject.CatalogPage;
 import pageobject.MainPage;
 
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -22,9 +23,9 @@ import static org.testng.Assert.assertTrue;
 public class FirstTest {
     private WebDriver webDriver;
     private String url = "https://market.yandex.ru/";
-    private String product = "смартфон xiaomi mi a3";
+    private String product = "смартфон xiaomi mi a2";
 
-    private String store = "//*[@class=\"_3w32plrcn2\"]";
+    private String store = "//*[@class=\"_3w32plrcn2\"][1]";
     private String onestore = "/html/body/div[2]/div[5]/div/div[6]/div/div[2]/div[1]/div/div/div/div[6]/div[1]/div/a";
     private String oneprise = "/html/body/div[2]/div[3]/div[3]/div[4]/div/div[1]/div/div/div/article[1]/div[5]/div[1]";
     private String price = "/html/body/div[2]/div[5]/div/div[6]/div/div[2]/div[1]/div/div";
@@ -44,8 +45,8 @@ public class FirstTest {
     public void cleanUp() {
         // закрыть браузер
         System.out.println("Close browser");
-        if (webDriver != null)
-            webDriver.quit();
+        //if (webDriver != null)
+        //    webDriver.quit();
     }
 
 
@@ -66,12 +67,12 @@ public class FirstTest {
         openUrl();
         mainPage = PageFactory.initElements(webDriver, MainPage.class);
         input();
-        сlickToFind();
+        clickToFind();
         catalogPage = PageFactory.initElements(webDriver, CatalogPage.class);
         getProducts();
         checkProduct();
         sortByPrice();
-        сlickFirstProduct();
+        clickFirstProduct();
         getStorePrice();
 
     }
@@ -100,7 +101,7 @@ public class FirstTest {
     @Owner(value = "Бойчук Денис Иванович")
     @Severity(value = SeverityLevel.NORMAL)
     @Step("Step 2 - нажать кнопку Найти")
-    private void сlickToFind() {
+    private void clickToFind() {
         mainPage.submitSearch();
         makeScreenshot();
     }
@@ -136,7 +137,7 @@ public class FirstTest {
     @Owner(value = "Бойчук Денис Иванович")
     @Severity(value = SeverityLevel.NORMAL)
     @Step("Step 6 - нажать на самый первый результат")
-    private void сlickFirstProduct() {
+    private void clickFirstProduct() {
         originalWindow = webDriver.getWindowHandle();
         oldWindowsSet = webDriver.getWindowHandles();
         catalogPage.clickFirstProd();
@@ -150,10 +151,13 @@ public class FirstTest {
     @Flaky
     private void getStorePrice() {
 
-        String newWindow = (new WebDriverWait(webDriver, 10))
+        String newWindow = (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
                 .until((ExpectedCondition<String>) driver -> {
-                            Set<String> newWindowsSet = driver.getWindowHandles();
-                            newWindowsSet.removeAll(oldWindowsSet);
+                   // assert driver != null;
+                    assert driver != null;
+                    Set<String> newWindowsSet;
+                    newWindowsSet = driver.getWindowHandles();
+                    newWindowsSet.removeAll(oldWindowsSet);
                             return newWindowsSet.size() > 0 ?
                                     newWindowsSet.iterator().next() : null;
                         }
@@ -161,21 +165,21 @@ public class FirstTest {
 
         webDriver.switchTo().window(newWindow);
         if (webDriver.getCurrentUrl().toLowerCase().contains(url.toLowerCase())) {
-            WebElement dynamicElement4 = (new WebDriverWait(webDriver, 50))
+            WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath(price)));
             if (dynamicElement4.getText().toLowerCase().contains("нет в продаже")) {
                 System.out.println("нет в продаже");
             } else {
-                System.out.println("Магазин " + webDriver.findElement(By.xpath(store)).findElement(By.xpath("./div/div/div[6]/div[1]/div/a/img")).getAttribute("title") +
+                System.out.println("Магазин " + webDriver.findElement(By.xpath(store)).findElement(By.xpath("//./div/div/div[6]/div[1]/div/a/img")).getAttribute("title") +
                         " цена " + webDriver.findElement(By.xpath(price + "/div/div[2]/div/span/span[1]")).getText());
             }
         } else {
             webDriver.switchTo().window(originalWindow);
 
-            WebElement dynamicElement4 = (new WebDriverWait(webDriver, 50))
+            WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath(onestore)));
 
-            WebElement dynamicElement5 = (new WebDriverWait(webDriver, 50))
+            WebElement dynamicElement5 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath(oneprise + "/div[1]/a/div")));
             System.out.println("Магазин " + dynamicElement4.getText() +
                     " цена " + dynamicElement5.getText());

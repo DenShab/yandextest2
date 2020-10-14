@@ -70,7 +70,7 @@ public class CatalogPage {
         this.elements = driver.findElements(By.xpath(productXpath));
         this.elements.addAll(driver.findElements(By.xpath(offerXpath)));
 
-        this.items = new ArrayList<Item>();
+        this.items = new ArrayList<>();
         for (WebElement element : this.elements) {
             String name = element.findElement(By.xpath("./div[5]/div[1]")).getText();
             String price = element.findElement(By.xpath("./div[4]/div[1]/h3/a")).getText();
@@ -95,6 +95,11 @@ public class CatalogPage {
      * Нажатие на первый элеент списка
      */
     public void clickFirstProd() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         firstprod.click();
     }
 }
