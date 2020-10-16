@@ -4,10 +4,12 @@ package pageobject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
+import static helper.JSUtils.*;
 
 public class MainPage {
     private WebDriver driver;
+
     private static String URL_MATCH = "https://market.yandex.ru/";
     /**
      * Поле ввода для поиска
@@ -38,6 +40,8 @@ public class MainPage {
      * @param product - {@link String}
      */
     public void input(String product) {
+        drawBorderByJS(driver, headerSearch);
+        //inputElementByJS(driver, headerSearch, product);
         headerSearch.sendKeys(product);
     }
 
@@ -45,7 +49,9 @@ public class MainPage {
      * Нажатие кнопки найти
      */
     public void submitSearch() {
-        searchButton.submit();
+        //searchButton.submit();
+        drawBorderByJS(driver, searchButton);
+        clickElementByJS(driver, searchButton);
     }
 
 }

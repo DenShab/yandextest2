@@ -10,17 +10,15 @@ public class Item {
     private String price;
 
     /**
-     *
      * @param name
      * @param price
      */
-    public Item(String name,String price) {
+    public Item(String name, String price) {
         this.name = name;
-        this.name = price;
+        this.price = price;
     }
 
-    public String getName(){
-        String name = this.name.toLowerCase();
-        return name;
+    public String getName() {
+        return this.name.toLowerCase();
     }
 }
