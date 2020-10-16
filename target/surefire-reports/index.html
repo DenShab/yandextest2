@@ -29,15 +29,15 @@
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
-          <img src="collapseall.gif" class="collapse-all-icon">
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Employees_Test" class="navigator-link">
+            <a href="#" class="navigator-link" panel-name="suite-Employees_Test">
               <span class="suite-name border-passed">Employees Test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Employees_Test" class="navigator-link ">
-                    <span>C:\Users\dboychuk\IdeaProjects\yandextest2\testng.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Employees_Test">
+                    <span>F:\Новая папка\yandextest2\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="testlist-Employees_Test">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="group-Employees_Test">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="times-Employees_Test">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="reporter-Employees_Test">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Employees_Test">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Employees_Test" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="chronological-Employees_Test">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -101,8 +101,8 @@
                     </span>
                     <div class="method-list-content passed suite-Employees_Test">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Employees_Test" title="test.FirstTest" class="method navigator-link" hash-for-method="someTest">someTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Employees_Test" title="test.FirstTest" hash-for-method="someTest">someTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Employees_Test -->
@@ -135,14 +135,14 @@
         </div> <!-- panel Employees_Test -->
         <div panel-name="test-xml-Employees_Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\dboychuk\IdeaProjects\yandextest2\testng.xml</span>
+            <span class="header-content">F:\Новая папка\yandextest2\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Employees Test&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Employees Test&quot; verbose=&quot;0&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Employees Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Employees Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;test.FirstTest&quot;/&gt;
     &lt;/classes&gt;
@@ -188,12 +188,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'someTest')
 data.setCell(0, 2, 'test.FirstTest')
-data.setCell(0, 3, 83521);
+data.setCell(0, 3, 44146);
 window.suiteTableData['Employees_Test']= { tableData: data, tableDiv: 'times-div-Employees_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-Employees_Test">
               </div> <!-- times-div-Employees_Test -->
             </div> <!-- times-div -->
@@ -226,11 +226,11 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">someTest</span>
-                <span class="method-start">9490 ms</span>
+                <span class="method-start">8791 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">93558 ms</span>
+                <span class="method-start">53255 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

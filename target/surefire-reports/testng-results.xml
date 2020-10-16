@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-28T14:53:00 YEKT" name="Employees Test" finished-at="2020-09-28T14:54:38 YEKT" duration-ms="97719">
+  <suite name="Employees Test" duration-ms="53277" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
     <groups>
     </groups>
-    <test started-at="2020-09-28T14:53:00 YEKT" name="Employees Test" finished-at="2020-09-28T14:54:38 YEKT" duration-ms="97719">
+    <test name="Employees Test" duration-ms="53277" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
       <class name="test.FirstTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.FirstTest@6075b2d3]" started-at="2020-09-28T14:53:00 YEKT" name="setUp" finished-at="2020-09-28T14:53:10 YEKT" duration-ms="9388" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.FirstTest@3153ddfc]" name="setUp" is-config="true" duration-ms="8713" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:22:49 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="someTest()[pri:0, instance:test.FirstTest@6075b2d3]" started-at="2020-09-28T14:53:10 YEKT" name="someTest" finished-at="2020-09-28T14:54:33 YEKT" duration-ms="83521" status="PASS">
+        <test-method status="PASS" signature="someTest()[pri:0, instance:test.FirstTest@3153ddfc]" name="someTest" duration-ms="44146" started-at="2020-10-16T15:22:49 YEKT" finished-at="2020-10-16T15:23:33 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- someTest -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:test.FirstTest@6075b2d3]" started-at="2020-09-28T14:54:34 YEKT" name="cleanUp" finished-at="2020-09-28T14:54:38 YEKT" duration-ms="4137" status="PASS">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:test.FirstTest@3153ddfc]" name="cleanUp" is-config="true" duration-ms="2" started-at="2020-10-16T15:23:34 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->

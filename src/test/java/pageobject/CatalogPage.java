@@ -2,6 +2,7 @@ package pageobject;
 
 import classis.Item;
 import helper.Helper;
+import helper.JSUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,8 @@ import static helper.JSUtils.*;
 public class CatalogPage {
     private WebDriver driver;
 
-    private static String URL_MATCH = "https://market.yandex.ru/catalog";
+    private static String URL_MATCH = "https://market.yandex.ru/";
+            //"catalog";
 
     private List<WebElement> elements;
     private ArrayList<Item> items;
@@ -96,7 +98,8 @@ public class CatalogPage {
      */
     public void clickFirstProd() {
         WebElement firstprod = firstprodXpath.
-                findElement(By.xpath(".//h3[@data-zone-name=\"title\"]"));
+                findElement(By.xpath(".//h3[@data-zone-name=\"title\"]/a"));
+        JSUtils.drawBorderByJS(driver,firstprod);
         firstprod.click();
     }
 }

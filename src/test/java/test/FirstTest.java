@@ -1,5 +1,6 @@
 package test;
 
+import helper.Helper;
 import io.qameta.allure.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,11 +25,11 @@ public class FirstTest {
     private WebDriver webDriver;
 
     private String url = "https://market.yandex.ru/";
-    private String product = "смартфон xiaomi mi a2";
+    private String product ="смартфон xiaomi mi a2";
 
     private String store = "//*[@class=\"_3w32plrcn2\"]";
-    private String onestore = "/html/body/div[2]/div[5]/div/div[6]/div/div[2]/div[1]/div/div/div/div[6]/div[1]/div/a";
-    private String oneprise = "/html/body/div[2]/div[3]/div[3]/div[4]/div/div[1]/div/div/div/article[1]/div[5]/div[1]";
+    private String onestore = "//article[1]//div[@data-zone-name=\"shop-name\"]";
+    private String oneprise = "//article[1]//div[@data-zone-name=\"price\"]";
     private String price = "//span[@data-autotest-currency=\"₽\"]";
 
     String originalWindow;
@@ -173,23 +174,40 @@ public class FirstTest {
             if (dynamicElement4.getText().toLowerCase().contains("нет в продаже")) {
                 System.out.println("нет в продаже");
             } else {
-                //"data-apiary-widget-name=\"@MarketNode/RecommendedOffers\""
-                String storeStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//img"))
+                if (Helper.existsElement(webDriver,(store+"//img"))){
+                    String storeStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//img"))
                         .getAttribute("title");
                 String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//span")).getText();
-                //String priceStr = webDriver.findElement(By.xpath(price + ".//span")).getText();
                 System.out.println("Магазин " + storeStr + " цена " + priceStr);
+                }
+                else {
+                    if (Helper.existsElement(webDriver,(store+"//[@data-zone-name=\\\"shopName\\\"]\""))){
+                        String storeStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//[@data-zone-name=\"shopName\"]")).getText();
+                        String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//span")).getText();
+                        System.out.println("Магазин " + storeStr + " цена " + priceStr);
+                    }
+                    else {
+                        String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//div[@class=\"_3NaXxl-HYN _3PwoBT4kxK ffKant8Dgf\"]")).getText();
+                        System.out.println("Магазин Яндекс Маркет цена " + priceStr);
+                    }
+                    //svg
+
+                    //data-zone-name="shopName"
+                }
             }
         } else {
             webDriver.switchTo().window(originalWindow);
 
-            WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
-                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(onestore)));
+           //WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
+           //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(onestore)));
 
-            WebElement dynamicElement5 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
-                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(oneprise + "/div[1]/a/div")));
-            String storeStr = dynamicElement4.getText();
-            String priceStr = dynamicElement5.getText();
+           //WebElement dynamicElement5 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
+           //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(oneprise)));
+           //String storeStr = dynamicElement4.getText();
+           //String priceStr = dynamicElement5.getText();
+
+            String storeStr = webDriver.findElement(By.xpath(onestore)).getText();
+            String priceStr = webDriver.findElement(By.xpath(oneprise)).getText();
             System.out.println("Магазин " + storeStr + " цена " + priceStr);
 
         }
