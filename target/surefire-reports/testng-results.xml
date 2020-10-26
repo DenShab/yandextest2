@@ -2,24 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Employees Test" duration-ms="53277" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
+  <suite name="Employees Test" duration-ms="45911" started-at="2020-10-26T13:19:00 YEKT" finished-at="2020-10-26T13:19:46 YEKT">
     <groups>
     </groups>
-    <test name="Employees Test" duration-ms="53277" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
-      <class name="test.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.FirstTest@3153ddfc]" name="setUp" is-config="true" duration-ms="8713" started-at="2020-10-16T15:22:40 YEKT" finished-at="2020-10-16T15:22:49 YEKT">
+    <test name="Employees Test" duration-ms="45911" started-at="2020-10-26T13:19:00 YEKT" finished-at="2020-10-26T13:19:46 YEKT">
+      <class name="test.JsonTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.JsonTest@10c8f62]" name="setUp" is-config="true" duration-ms="7141" started-at="2020-10-26T13:19:00 YEKT" finished-at="2020-10-26T13:19:07 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="someTest()[pri:0, instance:test.FirstTest@3153ddfc]" name="someTest" duration-ms="44146" started-at="2020-10-16T15:22:49 YEKT" finished-at="2020-10-16T15:23:33 YEKT">
+        <test-method status="PASS" signature="someJson()[pri:0, instance:test.JsonTest@10c8f62]" name="someJson" duration-ms="37886" started-at="2020-10-26T13:19:07 YEKT" finished-at="2020-10-26T13:19:45 YEKT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- someTest -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:test.FirstTest@3153ddfc]" name="cleanUp" is-config="true" duration-ms="2" started-at="2020-10-16T15:23:34 YEKT" finished-at="2020-10-16T15:23:34 YEKT">
+        </test-method> <!-- someJson -->
+        <test-method status="PASS" signature="makeScreenshot()[pri:0, instance:test.JsonTest@10c8f62]" name="makeScreenshot" is-config="true" duration-ms="430" started-at="2020-10-26T13:19:45 YEKT" finished-at="2020-10-26T13:19:46 YEKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makeScreenshot -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:test.JsonTest@10c8f62]" name="cleanUp" is-config="true" duration-ms="1" started-at="2020-10-26T13:19:46 YEKT" finished-at="2020-10-26T13:19:46 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- test.FirstTest -->
+      </class> <!-- test.JsonTest -->
     </test> <!-- Employees Test -->
   </suite> <!-- Employees Test -->
 </testng-results>

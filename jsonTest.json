@@ -1,0 +1,23 @@
+{
+  "открыть страницу Яндекс.Маркет": {
+    "URL_MATCH": "https://market.yandex.ru/"
+  },
+  "ввести в строку поиска": {
+    "URL_MATCH": "https://market.yandex.ru/",
+    "product": "смартфон xiaomi mi a2"
+  },
+  "нажать кнопку Найти": {
+    "URL_MATCH": "https://market.yandex.ru/"
+  },
+  "получить список товаров": {
+    "URL_MATCH": "https://market.yandex.ru/"
+  },
+  "проверка товара в списке": {
+    "URL_MATCH": "https://market.yandex.ru/",
+    "product": "смартфон xiaomi mi a2"
+  },
+  "применить сортировку по цене": {
+    "URL_MATCH": "https://market.yandex.ru/",
+    "sort": "по цене"
+  }
+}

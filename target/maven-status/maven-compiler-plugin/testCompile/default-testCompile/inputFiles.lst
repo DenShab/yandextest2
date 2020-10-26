@@ -1,5 +1,35 @@
-C:\Users\dboychuk\IdeaProjects\yandextest2\src\test\java\pageobject\ProductPage.java
-C:\Users\dboychuk\IdeaProjects\yandextest2\src\test\java\pageobject\CatalogPage.java
-C:\Users\dboychuk\IdeaProjects\yandextest2\src\test\java\pageobject\MainPage.java
-C:\Users\dboychuk\IdeaProjects\yandextest2\src\test\java\classis\Item.java
-C:\Users\dboychuk\IdeaProjects\yandextest2\src\test\java\test\FirstTest.java
+F:\Новая папка\yandextest2\src\test\java\gson\serialize\ProductPageSerializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\GetProductsDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\serialize\MainPageSerializer.java
+F:\Новая папка\yandextest2\src\test\java\pageobject\CatalogPage.java
+F:\Новая папка\yandextest2\src\test\java\test\FirstTest.java
+F:\Новая папка\yandextest2\src\test\java\classis\MyInput.java
+F:\Новая папка\yandextest2\src\test\java\helper\JSUtils.java
+F:\Новая папка\yandextest2\src\test\java\test\FirstJson.java
+F:\Новая папка\yandextest2\src\test\java\classis\GetStorePrice.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\ClickToFindDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\SortByPriceDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\deserialize\ProductPageDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\MyStep.java
+F:\Новая папка\yandextest2\src\test\java\gson\serialize\CatalogPageSerializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\deserialize\AllPageDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\MyInputDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\MyOpenUrlDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\MySteps.java
+F:\Новая папка\yandextest2\src\test\java\gson\deserialize\CatalogPageDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\ClickFirstProduct.java
+F:\Новая папка\yandextest2\src\test\java\classis\SortByPrice.java
+F:\Новая папка\yandextest2\src\test\java\gson\deserialize\MainPageDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\StepsDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\ClickToFind.java
+F:\Новая папка\yandextest2\src\test\java\classis\MyOpenUrl.java
+F:\Новая папка\yandextest2\src\test\java\pageobject\PageParametrs.java
+F:\Новая папка\yandextest2\src\test\java\classis\Item.java
+F:\Новая папка\yandextest2\src\test\java\gson\steps\deserialize\CheckProductDeserializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\GetProducts.java
+F:\Новая папка\yandextest2\src\test\java\pageobject\ProductPage.java
+F:\Новая папка\yandextest2\src\test\java\pageobject\MainPage.java
+F:\Новая папка\yandextest2\src\test\java\helper\Helper.java
+F:\Новая папка\yandextest2\src\test\java\gson\serialize\AllPageSerializer.java
+F:\Новая папка\yandextest2\src\test\java\classis\CheckProduct.java
+F:\Новая папка\yandextest2\src\test\java\test\JsonTest.java

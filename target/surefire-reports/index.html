@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Employees_Test">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Employees_Test" title="test.FirstTest" hash-for-method="someTest">someTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Employees_Test" title="test.JsonTest" hash-for-method="someJson">someJson</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Employees_Test -->
@@ -120,14 +120,14 @@
           <div class="suite-Employees_Test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">test.FirstTest</span>
+              <span class="class-name">test.JsonTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="someTest">
-                  </a> <!-- someTest -->
-                  <span class="method-name">someTest</span>
+                  <a name="someJson">
+                  </a> <!-- someJson -->
+                  <span class="method-name">someJson</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +144,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Employees Test&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Employees Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.FirstTest&quot;/&gt;
+      &lt;class name=&quot;test.JsonTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Employees Test --&gt;
 &lt;/suite&gt; &lt;!-- Employees Test --&gt;
@@ -186,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'someTest')
-data.setCell(0, 2, 'test.FirstTest')
-data.setCell(0, 3, 44146);
+data.setCell(0, 1, 'someJson')
+data.setCell(0, 2, 'test.JsonTest')
+data.setCell(0, 3, 37886);
 window.suiteTableData['Employees_Test']= { tableData: data, tableDiv: 'times-div-Employees_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 seconds</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-Employees_Test">
               </div> <!-- times-div-Employees_Test -->
             </div> <!-- times-div -->
@@ -219,18 +219,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.FirstTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.JsonTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">someTest</span>
-                <span class="method-start">8791 ms</span>
+                <span class="method-name">someJson</span>
+                <span class="method-start">7230 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">makeScreenshot</span>
+                <span class="method-start">45435 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">53255 ms</span>
+                <span class="method-start">45895 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

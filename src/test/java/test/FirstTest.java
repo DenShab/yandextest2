@@ -1,5 +1,7 @@
 package test;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import helper.Helper;
 import io.qameta.allure.*;
 import org.openqa.selenium.*;
@@ -8,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,13 +29,13 @@ public class FirstTest {
     private WebDriver webDriver;
 
     private String url = "https://market.yandex.ru/";
-    private String product ="смартфон xiaomi mi a2";
+    private String product = "смартфон xiaomi mi a2";
 
-    private String store = "//*[@class=\"_3w32plrcn2\"]";
+    private String store = "//*[@class=\"_3w32plrcn2\"][1]";
     private String onestore = "//article[1]//div[@data-zone-name=\"shop-name\"]";
     private String oneprise = "//article[1]//div[@data-zone-name=\"price\"]";
     private String price = "//span[@data-autotest-currency=\"₽\"]";
-
+    //→
     String originalWindow;
     Set<String> oldWindowsSet;
     MainPage mainPage;
@@ -45,7 +49,10 @@ public class FirstTest {
             webDriver.manage().window().maximize();
         }
     }
-
+    @AfterMethod
+    public void onTestFailure(ITestResult tr) {
+        makeScreenshot();
+    }
     @AfterTest
     public void cleanUp() {
         // закрыть браузер
@@ -71,6 +78,18 @@ public class FirstTest {
     public void someTest() {
         openUrl();
         mainPage = PageFactory.initElements(webDriver, MainPage.class);
+        mainPage = new MainPage(webDriver);
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+        String json = gson.toJson(mainPage);
+        //System.out.println(json);
+        //try {
+        //    gson.toJson(mainPage, new FileWriter("thetextfile.txt"));
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
+
         input();
         clickToFind();
         catalogPage = PageFactory.initElements(webDriver, CatalogPage.class);
@@ -174,19 +193,17 @@ public class FirstTest {
             if (dynamicElement4.getText().toLowerCase().contains("нет в продаже")) {
                 System.out.println("нет в продаже");
             } else {
-                if (Helper.existsElement(webDriver,(store+"//img"))){
+                if (Helper.existsElement(webDriver, (store + "//img"))) {
                     String storeStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//img"))
-                        .getAttribute("title");
-                String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//span")).getText();
-                System.out.println("Магазин " + storeStr + " цена " + priceStr);
-                }
-                else {
-                    if (Helper.existsElement(webDriver,(store+"//[@data-zone-name=\\\"shopName\\\"]\""))){
+                            .getAttribute("title");
+                    String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//span")).getText();
+                    System.out.println("Магазин " + storeStr + " цена " + priceStr);
+                } else {
+                    if (Helper.existsElement(webDriver, (store + "//[@data-zone-name=\"shopName\"]"))) {
                         String storeStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//[@data-zone-name=\"shopName\"]")).getText();
                         String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//span")).getText();
                         System.out.println("Магазин " + storeStr + " цена " + priceStr);
-                    }
-                    else {
+                    } else {
                         String priceStr = webDriver.findElement(By.xpath(store)).findElement(By.xpath(".//div[@class=\"_3NaXxl-HYN _3PwoBT4kxK ffKant8Dgf\"]")).getText();
                         System.out.println("Магазин Яндекс Маркет цена " + priceStr);
                     }
@@ -198,13 +215,13 @@ public class FirstTest {
         } else {
             webDriver.switchTo().window(originalWindow);
 
-           //WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
-           //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(onestore)));
+            //WebElement dynamicElement4 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
+            //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(onestore)));
 
-           //WebElement dynamicElement5 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
-           //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(oneprise)));
-           //String storeStr = dynamicElement4.getText();
-           //String priceStr = dynamicElement5.getText();
+            //WebElement dynamicElement5 = (new WebDriverWait(webDriver, Duration.ofSeconds(50)))
+            //        .until(ExpectedConditions.presenceOfElementLocated(By.xpath(oneprise)));
+            //String storeStr = dynamicElement4.getText();
+            //String priceStr = dynamicElement5.getText();
 
             String storeStr = webDriver.findElement(By.xpath(onestore)).getText();
             String priceStr = webDriver.findElement(By.xpath(oneprise)).getText();

@@ -1,15 +1,16 @@
 package helper;
 
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class Helper {
@@ -32,7 +33,7 @@ public class Helper {
         return true;
     }
 
-    public WebElement fluentWait(WebDriver driver,final By locator){
+    public WebElement fluentWait(WebDriver driver, final By locator) {
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
@@ -45,5 +46,48 @@ public class Helper {
         });
 
         return foo;
-    };
+    }
+
+    public static String readUsingBufferedReader(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String line = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        String ls = System.getProperty("line.separator");
+        while ((line = reader.readLine()) != null) {
+            stringBuilder.append(line);
+            stringBuilder.append(ls);
+        }
+
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+
+        String str =new String(stringBuilder.toString().getBytes(),"UTF-8");
+
+        System.out.println(str);
+
+        return str;
+    }
+
+
+
+    // try(FileWriter writer = new FileWriter("mainPage.json", false))
+    // {
+    //     writer.write(json);
+    //     writer.flush();
+    // }
+    // catch(IOException ex){
+    //     System.out.println(ex.getMessage());
+    // }
+
+    public static void writer(String fileName, String text) throws IOException {
+        try (FileWriter writer = new FileWriter(fileName, false)) {
+            writer.write(text);
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    @Attachment(value = "Attachment Screenshot", type = "image/png")
+    public static byte[] makeScreenshot(WebDriver webDriver) {
+        return ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
+    }
 }

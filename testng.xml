@@ -2,7 +2,7 @@
 <suite name="Employees Test">
     <test name="Employees Test">
     <classes>
-        <class name="test.FirstTest">
+        <class name="test.JsonTest">
         </class>
     </classes>
     </test>
