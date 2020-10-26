@@ -1,0 +1,6 @@
+{
+  "URL_MATCH": "https://market.yandex.ru/",
+  "ProductXpath": "//article[@data-autotest-id=\"product-snippet\" or @data-autotest-id=\"offer-snippet\"] ",
+  "FirstProd": "//*[@data-zone-name=\"snippetList\"]/article[position()=1]//h3[@data-zone-name=\"title\"]/a",
+  "SortBt": "//button[text()=\"по цене\"]"
+}

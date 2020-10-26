@@ -1,0 +1,9 @@
+{
+  "открыть страницу Яндекс.Маркет": {
+    "URL_MATCH": "https://market.yandex.ru/"
+  },
+  "ввести в строку поиска": {
+    "URL_MATCH": "https://market.yandex.ru/",
+    "product": "смартфон xiaomi mi a2"
+  }
+}

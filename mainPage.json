@@ -1,0 +1,5 @@
+{
+  "URL_MATCH": "https://market.yandex.ru/",
+  "HeaderSearch": "//*[@id=\"header-search\"]",
+  "SearchButton": "//*[@type=\"submit\"]"
+}
